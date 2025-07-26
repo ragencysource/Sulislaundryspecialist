@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulis Laundry Specialist - Mentoring Bisnis Laundry Profesional</title>
+    
+    <meta name="description" content="Sulis Laundry Specialist menyediakan mentoring bisnis laundry profesional berbasis pengalaman nyata. Pelajari cara membangun bisnis laundry yang profitabel dari praktisi ahli.">
+    <meta name="keywords" content="mentoring laundry, bisnis laundry, usaha laundry, pelatihan laundry, konsultan laundry, Sulis Laundry Specialist, King Laundry, buka laundry, franchise laundry">
+    <meta name="author" content="Sulis Laundry Specialist">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+
+    <style>
+        :root {
+            --primary-color: #F97316;
+            --primary-color-dark: #EA580C;
+            --secondary-color: #111827;
+            --text-color: #374151;
+            --light-gray-color: #F9FAFB;
+            --white-color: #FFFFFF;
+            --border-color: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--white-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            color: var(--text-color);
+            min-height: auto;
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .section-title h2 {
+            font-size: 2rem; 
+            color: var(--secondary-color);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            line-height: 1.2; 
+        }
+        
+        #pricing .section-title h2,
+        #mentoring .section-title h2,
+        #services .section-title h2 {
+            font-size: 2.5rem;
+        }
+
+        .section-title h2 .highlight-branches-large {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            font-weight: 700;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .section-title p {
+            max-width: 600px;
+            margin: 15px auto 0;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+             background-color: var(--primary-color);
+             color: var(--white-color);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background-color: var(--white-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .nav-logo span {
+            color: var(--primary-color);
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .nav-logo span + span {
+            margin-left: 0;
+        }
+
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-item a:hover, .nav-item a.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item a:hover::after, .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger .bar {
+            display: block;
+            width: 15px;
+            height: 2px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                /* Menggunakan calc() untuk memastikan menu dimulai tepat setelah navbar */
+                /* Tinggi navbar adalah padding atas (15px) + tinggi konten (sekitar 30px untuk logo) + padding bawah (15px) */
+                /* Jadi, 15px + 30px + 15px = 60px. Sesuaikan jika logo lebih tinggi. */
+                top: 58px; /* Nilai ini harus sama persis dengan tinggi aktual navbar */
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--white-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-item {
+                margin: 16px 0;
+            }
+        }
+
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://ik.imagekit.io/y6chns5jr/hero2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: var(--white-color); 
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            color: var(--white-color); 
+        }
+        
+        .hero-content h1, .hero-content p, .hero-content .btn {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .about-content {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.08rem; 
+        }
+
+        .about-content h3 {
+            font-size: 2.5rem; 
+            text-align: left;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .about-content .highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .branches {
+            background-color: var(--light-gray-color);
+        }
+        
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .branch-card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .branch-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .branch-photo-placeholder {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            background-color: var(--border-color);
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .branch-card-content {
+            padding: 0 30px 30px 30px;
+        }
+        
+        .branch-card .icon {
+             color: var(--primary-color);
+             margin-bottom: 15px;
+        }
+        
+        .branch-card h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .branch-card p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card { 
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-photo-placeholder {
+            aspect-ratio: 1 / 1; 
+            width: 100%;
+            background-color: #E5E7EB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #9CA3AF;
+            font-weight: 500;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-indent: -9999px; 
+            overflow: hidden; 
+        }
+
+        .service-content { 
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+
+        .service-content h3 { 
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px; 
+            text-transform: uppercase; 
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.4;
+            margin-bottom: 0; 
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mentoring {
+             background-color: var(--light-gray-color);
+        }
+        
+        .mentoring-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
+        }        
+        .feature-card .icon {
+            color: var(--primary-color);
+            margin-bottom: 0px;
+            font-size: 3.5rem; 
+        }
+        
+        .feature-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem; 
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .mentoring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .mentoring-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing {
+            width: 100%;
+            margin: 0 auto 3em;
+        }
+
+        .pricing-palden {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .pricing-palden .pricing-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            cursor: default;
+            color: var(--text-color);
+            background: var(--white-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+            border: 2px solid var(--border-color);
+            border-radius: 20px 20px 10px 10px;
+        }
+
+        .pricing-palden .pricing-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
+        }
+
+        .pricing-palden .pricing-deco {
+            border-radius: 10px 10px 0 0;
+            background: var(--primary-color);
+            padding: 4em 0 8em; 
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .pricing-palden .pricing-deco-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+        }
+
+        .pricing-palden .deco-layer--1 { fill: rgba(255, 255, 255, 0.6); }
+        .pricing-palden .deco-layer--2 { fill: rgba(255, 255, 255, 0.6); }
+        .pricing-palden .deco-layer--3 { fill: rgba(255, 255, 255, 0.7); }
+        .pricing-palden .deco-layer--4 { fill: var(--white-color); }
+
+        .pricing-palden .pricing-title {
+            font-size: 0.9em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--white-color);
+        }
+        .pricing-palden .deco-layer {
+            -webkit-transition: -webkit-transform 0.5s;
+            transition: transform 0.5s;
+        }
+        .pricing-palden .pricing-item:hover .deco-layer--1 {
+            -webkit-transform: translate3d(15px, 0, 0);
+            transform: translate3d(15px, 0, 0);
+        }
+        .pricing-palden .pricing-item:hover .deco-layer--2 {
+            -webkit-transform: translate3d(-15px, 0, 0);
+            transform: translate3d(-15px, 0, 0);
+        }
+        .pricing-palden .icon {
+            font-size: 2.5em;
+            color: var(--white-color);
+        }
+        .pricing-palden .pricing-price {
+            font-size: 4em;
+            font-weight: bold;
+            padding: 0;
+            color: var(--white-color);
+            margin: 0 0 0.25em 0;
+            line-height: 0.75;
+        }
+        .pricing-palden .pricing-currency {
+            font-size: 0.2em;
+            vertical-align: top;
+            margin-right: 5px;
+        }
+        .pricing-palden .pricing-period {
+            font-size: 0.2em;
+            padding: 0 0 0 0.5em;
+            font-style: italic;
+        }
+        .pricing-palden .pricing__sentence {
+            font-weight: bold;
+            margin: 1em 2em;
+            padding: 0 0 0.5em;
+            text-align: center;
+            flex-grow: 1; 
+        }
+        .pricing-palden .pricing-feature-list {
+            margin: 0;
+            padding: 0.25em 0 2.5em; 
+            list-style: none;
+            text-align: left; 
+            padding-left: 2em;
+            padding-right: 2em;
+            color: var(--text-color);
+            flex-grow: 1; 
+        }
+        .pricing-palden .pricing-feature {
+            padding: 0.8em 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        .pricing-palden .pricing-feature svg {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        .pricing-palden .pricing-feature i {
+            margin-right: 8px;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .pricing-palden .pricing-action {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: inline-block;
+            padding: 12px 25px; 
+            color: var(--white-color);
+            border-radius: 50px;
+            background: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pricing-palden .pricing-action:hover, .pricing-palden .pricing-action:focus {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-palden .pricing-item--featured {
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(46, 59, 125, 0.23);
+        }
+
+        .pricing-palden .pricing-item--featured .pricing-deco {
+            padding: 4em 0 8em; 
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-color-dark));
+        }
+
+        .pricing-palden .pricing-item--featured .pricing-action {
+            background-color: var(--primary-color-dark);
+            border-color: var(--primary-color-dark);
+        }
+
+        .pricing-palden .pricing-item--featured .pricing-action:hover {
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 992px) {
+            .pricing-palden {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .pricing-palden {
+                grid-template-columns: 1fr;
+            }
+            .pricing-palden .pricing-item {
+                max-width: 400px;
+            }
+        }
+
+        .contact {
+            background-color: var(--light-gray-color);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            background-color: var(--white-color);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .contact-info h3 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            margin-bottom: 40px;
+        }
+        
+        .contact-info-item .icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .contact-info-item .icon i {
+            font-size: 1.25rem;
+        }
+        
+        .contact-info-item a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-gray-color);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.5rem;
+            color: var(--white-color);
+            margin-bottom: 20px;
+        }
+        .footer-about h3 span {
+            color: var(--primary-color);
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .footer-about h3 span + span {
+            margin-left: 0;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.1rem;
+            color: var(--white-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer-widget ul {
+            list-style: none;
+        }
+        
+        .footer-widget ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-widget ul li a {
+            text-decoration: none;
+            color: var(--light-gray-color);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-widget ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-socials a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white-color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-socials a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-socials a i {
+            font-size: 1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-socials {
+                justify-content: center;
+            }
+        }
+
+        .anim-element {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#hero" class="nav-logo">Sulis<span>LaundrySpecialist</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about">Tentang Kami</a></li>
+                <li class="nav-item"><a href="#mentoring">Layanan</a></li>
+                <li class="nav-item"><a href="#pricing">Paket</a></li>
+                <li class="nav-item"><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <h1>Wujudkan Bisnis Laundry Impian Anda</h1>
+                <p>Raih profit maksimal dengan bimbingan langsung dari pakar laundry berpengalaman. Kami hadirkan strategi nyata yang telah teruji, berangkat dari kesuksesan 4 cabang aktif kami. Mulai perjalanan sukses Anda sekarang!</p>
+                <a href="#pricing" class="btn">Lihat Paket Kami</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container about-grid">
+                <div class="about-content anim-element">
+                    <h3 class="section-title h2 about-title">Dari Praktisi untuk Calon <span class="highlight">Pengusaha Sukses</span></h3>
+                    <p>Berdiri sejak 2017, <b>Sulis Laundry Specialist</b> telah berkembang dari satu gerai menjadi empat cabang sukses di Sidoarjo, menunjukkan komitmen dan keahlian dalam industri laundry. Sebagai praktisi berpengalaman, kami memahami dinamika bisnis secara mendalam. Melalui mentoring, kami berbagi model bisnis yang terbukti efektif, efisien, dan menguntungkan, hasil dari pengalaman nyata dan keberhasilan kami, untuk membawa Bisnis Anda meraih kesuksesan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="branches" class="branches">
+            <div class="container">
+                <div class="section-title anim-element">
+                    <h2>Jejak Sukses Kami<br><span class="highlight-branches-large">4 Cabang Aktif King Laundry</span></h2>
+                    <p>Ini adalah bukti nyata dari sistem yang akan Anda pelajari. Setiap cabang beroperasi dengan standar tinggi yang konsisten.</p>
+                </div>
+                <div class="branch-grid">
+                    <div class="branch-card anim-element">
+                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sepande.jpg');"></div>
+                        <div class="branch-card-content">
+                            <h3>King Laundry Sepande</h3>
+                            <p>0812-3325-5011</p>
+                            <a href="https://maps.app.goo.gl/AsfGo7TwvSG2mcqHA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        </div>
+                    </div>
+                    <div class="branch-card anim-element">
+                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/IMG_20250726_230349.jpg');"></div>
+                        <div class="branch-card-content">
+                            <h3>King Laundry Sungon</h3>
+                            <p>0812-3325-5011</p>
+                            <a href="https://maps.app.goo.gl/ynWzy8Jm3et8eBQL9" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        </div>
+                    </div>
+                    <div class="branch-card anim-element">
+                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sukodono.jpg');"></div>
+                        <div class="branch-card-content">
+                            <h3>King Laundry Sukodono</h3>
+                            <p>0822-2557-2032</p>
+                            <a href="https://maps.app.goo.gl/4gLBTujeUKohgqqD8" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        </div>
+                    </div>
+                    <div class="branch-card anim-element">
+                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/thamrin.jpg');"></div>
+                        <div class="branch-card-content">
+                            <h3>King Laundry Thamrin</h3>
+                            <p>0852-1313-1586</p>
+                            <a href="https://maps.app.goo.gl/wj9VEHsGGFZRjdQEA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-title anim-element">
+                    <h2>Standar Kualitas King Laundry</h2>
+                    <p>Visualisasi dari standar operasional dan hasil pengerjaan yang akan Anda pelajari dan terapkan dalam bisnis Anda.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb1.jpg');">Foto Layanan 1</div>
+                        <div class="service-content">
+                            <h3>PENYAMBUTAN HANGAT</h3>
+                            <p class="service-description">Karyawan kami siap menyambut Anda dengan senyum, memberikan pelayanan ramah sejak kedatangan pertama.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb2.jpg');">Foto Layanan 2</div>
+                        <div class="service-content">
+                            <h3>PROSES PENCUCIAN PROFESIONAL</h3>
+                            <p class="service-description">Pakaian Anda dipersiapkan dengan teliti sebelum masuk ke mesin cuci canggih kami, memastikan kebersihan optimal.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb3.jpg');">Foto Layanan 3</div>
+                        <div class="service-content">
+                            <h3>SENTUHAN AKHIR HALUS</h3>
+                            <p class="service-description">Penggunaan mesin setrika uap modern menjamin setiap pakaian Anda rapi dan bebas kusut sempurna.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb4.jpg');">Foto Layanan 4</div>
+                        <div class="service-content">
+                            <h3>KEHARUMAN TAHAN LAMA</h3>
+                            <p class="service-description">Kami menyemprotkan parfum khusus laundry berkualitas tinggi agar pakaian Anda wangi sepanjang hari.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb5.jpg');">Foto Layanan 5</div>
+                        <div class="service-content">
+                            <h3>PENGEPAKAN RAPI & HIGIENIS</h3>
+                            <p class="service-description">Setiap pakaian dikemas dengan standar kebersihan tinggi, siap untuk diambil atau diantar.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb6.jpg');">Foto Layanan 6</div>
+                        <div class="service-content">
+                            <h3>KONTROL KUALITAS MENYELURUH</h3>
+                            <p class="service-description">Setiap hasil cucian melalui tahap pengecekan ketat untuk memastikan tidak ada detail yang terlewat.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb7.jpg');">Foto Layanan 7</div>
+                        <div class="service-content">
+                            <h3>PROSES CEPAT DENGAN PELAYANAN OPTIMAL</h3>
+                            <p class="service-description">Karyawan kami memastikan Anda menerima pakaian yang sudah bersih dan rapi dengan pelayanan terbaik.</p>
+                        </div>
+                    </div>
+                    <div class="service-card anim-element">
+                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb8.jpg');">Foto Layanan 8</div>
+                        <div class="service-content">
+                            <h3>FREE DELIVERY</h3>
+                            <p class="service-description">Kami siap mengantar pakaian bersih Anda secara gratis langsung ke tempat tujuan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mentoring" class="mentoring">
+            <div class="container">
+                <div class="section-title anim-element">
+                    <h2>Layanan Mentoring Unggulan Kami</h2>
+                    <p>Kami tidak hanya memberikan ilmu, kami memberikan panduan praktis dan dukungan penuh untuk kesuksesan Anda.</p>
+                </div>
+                <div class="mentoring-grid">
+                    <div class="feature-card anim-element">
+                        <div class="icon"><i class="fi fi-rs-chart-histogram"></i></div>
+                        <h3>Kurikulum Berbasis Praktik</h3>
+                        <p>Semua materi berasal dari pengalaman nyata mengelola 4 cabang, bukan hanya teori dari buku. Anda belajar apa yang benar-benar berhasil di lapangan.</p>
+                    </div>
+                    <div class="feature-card anim-element">
+                        <div class="icon"><i class="fi fi-rs-dialogue-exchange"></i></div>
+                        <h3>Pendampingan Personal & Fleksibel</h3>
+                        <p>Kami tidak hanya memberi modul. Anda mendapat pendampingan intensif via konsultasi langsung dan WhatsApp support untuk solusi masalah harian bisnis Anda.</p>
+                    </div>
+                    <div class="feature-card anim-element">
+                        <div class="icon"><i class="fi fi-rr-analyse-alt"></i></div>
+                        <h3>Blueprint Operasional Teruji</h3>
+                        <p>Dapatkan blueprint lengkap: SOP pencucian, rekrutmen karyawan, perhitungan HPP, hingga manajemen keuangan yang sudah terbukti profitabel.</p>
+                    </div>
+                    <div class="feature-card anim-element">
+                        <div class="icon"><i class="fi fi-rs-sparkles"></i></div>
+                        <h3>Strategi Marketing Efektif</h3>
+                        <p>Pelajari cara menarik pelanggan pertama Anda dan membangun loyalitas. Dari strategi online (sosmed) hingga offline (promo lokal) yang terbukti ampuh.</p>
+                    </div>
+                     <div class="feature-card anim-element">
+                        <div class="icon"><i class="fi fi-ss-entrance"></i></div>
+                        <h3>Akses Jaringan Supplier</h3>
+                        <p>Dapatkan rekomendasi supplier bahan baku dan peralatan laundry terbaik dengan harga kompetitif. Hemat waktu dan biaya riset Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <div class="section-title anim-element">
+                    <h2>Paket Mentoring Bisnis Laundry</h2>
+                    <p>Pilih paket yang paling sesuai dengan kebutuhan Anda untuk memulai atau mengakselerasi bisnis laundry.</p>
+                </div>
+                
+                <div class='pricing pricing-palden'>
+                    <div class='pricing-item anim-element'>
+                        <div class='pricing-deco'>
+                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' opacity='0.7'></path>
+                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                            </svg>
+                            <div class='pricing-price'>
+                                <span class='pricing-currency'>Rp</span>200rb
+                                <span class='pricing-period'>/jam</span>
+                            </div>
+                            <h3 class='pricing-title'>KONSULTASI CEPAT</h3>
+                        </div>
+                        
+                        <p class='pricing__sentence'>Untuk Anda yang masih ragu & butuh arahan awal</p>
+                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
+                        
+                        <ul class='pricing-feature-list'>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Online 1 Jam via Zoom/WA</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Analisis Peluang Usaha Laundry</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Estimasi Modal & Biaya Operasional</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Tanya-Jawab Intensif</li>
+                        </ul>
+                    </div>
+
+                    <div class='pricing-item pricing__item--featured anim-element'>
+                        <div class='pricing-deco'>
+                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' opacity='0.7'></path>
+                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                            </svg>
+                            <div class='pricing-price'>
+                                <span class='pricing-currency'>Rp</span>1,5jt
+                                <span class='pricing-period'>/bulan</span>
+                            </div>
+                            <h3 class='pricing-title'>PAKET PEMULA</h3>
+                        </div>
+                        
+                        <p class='pricing__sentence'>Untuk Anda yang ingin mulai dari nol dengan panduan lengkap</p>
+                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
+                        
+                        <ul class='pricing-feature-list'>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan Lengkap (Modal, SOP, HPP)</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Strategi Pemasaran Awal</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>4x Sesi Konsultasi Mingguan via Zoom/WA</li>
+                             <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Full WhatsApp Support 1 Bulan</li>
+                        </ul>
+                    </div>
+
+                    <div class='pricing-item anim-element'>
+                        <div class='pricing-deco'>
+                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' opacity='0.7'></path>
+                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                            </svg>
+                            <div class='pricing-price'>
+                                <span class='pricing-currency'>Rp</span>1jt
+                                <span class='pricing-period'>/bulan</span>
+                            </div>
+                            <h3 class='pricing-title'>WA SUPPORT</h3>
+                        </div>
+                        
+                        <p class='pricing__sentence'>Partner diskusi harian untuk scale up bisnis Anda</p>
+                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
+                        
+                        <ul class='pricing-feature-list'>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Konsultasi Langsung via WhatsApp</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Tanya Jawab Seputar Operasional, Marketing & Manajemen Laundry</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Review Strategi Promosi</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan SOP & Rekrutmen</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
+                             <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Akses Prioritas (Fast Response)</li>
+                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Konsultasi: Senin-Sabtu, 08:00-20:00 WIB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <div class="container anim-element">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Siap Wujudkan Bisnis Laundry Impian Anda?</h3>
+                        <p>Jangan tunda lagi! Konsultasikan rencana Anda sekarang. Hubungi kami melalui channel di bawah atau kirim pesan Anda.</p>
+                        <div class="contact-info-item">
+                            <div class="icon">
+                               <i class="fi fi-brands-whatsapp"></i>
+                            </div>
+                            <div>
+                                <strong>WhatsApp:</strong><br>
+                                <a href="https://wa.me/62881027306371" target="_blank">+62 881-0273-06371</a>
+                            </div>
+                        </div>
+                         <div class="contact-info-item">
+                            <div class="icon">
+                               <i class="fi fi-brands-tik-tok"></i>
+                            </div>
+                            <div>
+                                <strong>TikTok:</strong><br>
+                                <a href="https://tiktok.com/@sulist_laundry_specialist" target="_blank">@sulist_laundry_specialist</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="icon">
+                               <i class="fi fi-rs-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:sulist_laundrysp@gmail.com">sulist_laundrysp@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" action="https://getform.io/f/allzmoka" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nama Lengkap Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Alamat Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subjek / Paket yang Dipilih" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Sulis <span>Laundry Specialist</span></h3>
+                    <p>Mentoring bisnis laundry berbasis pengalaman nyata. Kami membantu Anda membangun bisnis yang profitabel dan berkelanjutan dari nol.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#mentoring">Layanan</a></li>
+                        <li><a href="#pricing">Paket</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Terhubung</h4>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/62881027306371" target="_blank" title="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="https://tiktok.com/@sulist_laundry_specialist" target="_blank" title="TikTok"><i class="fi fi-brands-tik-tok"></i></a>
+                        <a href="mailto:sulist_laundrysp@gmail.com" title="Email"><i class="fi fi-rs-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Sulis Laundry Specialist. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: 'power3.out' } });
+        heroTimeline.to('.hero-content h1', { opacity: 1, y: 0, delay: 0.2 })
+                    .to('.hero-content p', { opacity: 1, y: 0 }, '-=0.6')
+                    .to('.hero-content .btn', { opacity: 1, y: 0 }, '-=0.6');
+
+        gsap.utils.toArray('.anim-element').forEach(element => {
+            gsap.fromTo(element, 
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    }
+                }
+            );
+        });
+        
+        const navbar = document.getElementById('navbar');
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksDesktop = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 80)) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksDesktop.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').substring(1) === current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(navLink => {
+            navLink.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // --- Perbaikan Formulir Kontak Dimulai Di Sini ---
+        const contactForm = document.getElementById('contactForm');
+        const submitButton = contactForm.querySelector('button[type="submit"]'); // Dapatkan tombol submit
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(event) { // Tambahkan 'async'
+                event.preventDefault(); // Mencegah pengiriman formulir default
+
+                let isValid = true;
+                const formInputs = contactForm.querySelectorAll('input[required], textarea[required]');
+
+                // Validasi input
+                formInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = 'red';
+                        input.placeholder = 'Mohon isi bidang ini!';
+                    } else {
+                        input.style.borderColor = ''; // Hapus border merah jika sudah diisi
+                        // Mengembalikan placeholder asli
+                        if (input.name === 'name') input.placeholder = 'Nama Lengkap Anda';
+                        if (input.name === 'email') input.placeholder = 'Alamat Email';
+                        if (input.name === 'subject') input.placeholder = 'Subjek / Paket yang Dipilih';
+                        if (input.name === 'message') input.placeholder = 'Tulis pesan Anda di sini...';
+                    }
+                });
+
+                if (!isValid) {
+                    alert('Mohon lengkapi semua bidang yang wajib diisi.');
+                    return; // Hentikan proses jika validasi gagal
+                }
+
+                // Jika validasi berhasil, kirim data
+                submitButton.disabled = true; // Nonaktifkan tombol untuk mencegah double submit
+                submitButton.textContent = 'Mengirim...'; // Ubah teks tombol
+
+                const formData = new FormData(contactForm); // Mengambil semua data dari formulir
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: contactForm.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Penting untuk Getform.io
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert('Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.');
+                        contactForm.reset(); // Mengosongkan formulir
+                    } else {
+                        // Coba ambil pesan error dari response jika ada
+                        const errorData = await response.json(); 
+                        alert(`Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung. Error: ${errorData.message || response.statusText}`);
+                    }
+                } catch (error) {
+                    console.error('Error saat mengirim formulir:', error);
+                    alert('Terjadi kesalahan jaringan atau server. Silakan coba lagi nanti.');
+                } finally {
+                    submitButton.disabled = false; // Aktifkan kembali tombol
+                    submitButton.textContent = 'Kirim Pesan'; // Kembalikan teks tombol
+                }
+            });
+        }
+        // --- Perbaikan Formulir Kontak Selesai Di Sini ---
+
+    });
+    </script>
+</body>
+</html>
