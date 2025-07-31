@@ -51,10 +51,16 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Perubahan utama: .container sekarang hanya untuk padding */
         .container {
-            max-width: 1140px;
-            margin: 0 auto;
+            width: 100%;
             padding: 0 20px;
+        }
+
+        /* Kelas baru untuk membatasi lebar konten utama */
+        .main-content {
+            max-width: 1280px; /* Atur lebar maksimum yang Anda inginkan di sini */
+            margin: 0 auto;
         }
 
         section {
@@ -145,6 +151,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1280px; /* Batasi lebar navbar container */
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .nav-logo {
@@ -229,10 +238,7 @@
             .nav-menu {
                 position: fixed;
                 left: -100%;
-                /* Menggunakan calc() untuk memastikan menu dimulai tepat setelah navbar */
-                /* Tinggi navbar adalah padding atas (15px) + tinggi konten (sekitar 30px untuk logo) + padding bawah (15px) */
-                /* Jadi, 15px + 30px + 15px = 60px. Sesuaikan jika logo lebih tinggi. */
-                top: 58px; /* Nilai ini harus sama persis dengan tinggi aktual navbar */
+                top: 58px; 
                 gap: 0;
                 flex-direction: column;
                 background-color: var(--white-color);
@@ -246,6 +252,10 @@
             }
             .nav-item {
                 margin: 16px 0;
+            }
+
+            .navbar-container {
+                max-width: 100%;
             }
         }
 
@@ -352,8 +362,8 @@
         }
         
         .branch-card .icon {
-             color: var(--primary-color);
-             margin-bottom: 15px;
+              color: var(--primary-color);
+              margin-bottom: 15px;
         }
         
         .branch-card h3 {
@@ -441,7 +451,7 @@
         }
 
         .mentoring {
-             background-color: var(--light-gray-color);
+              background-color: var(--light-gray-color);
         }
         
         .mentoring-grid {
@@ -462,7 +472,7 @@
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
-        }        
+        }      
         .feature-card .icon {
             color: var(--primary-color);
             margin-bottom: 0px;
@@ -502,7 +512,7 @@
         .pricing-palden .pricing-item {
             position: relative;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
             align-items: stretch;
             text-align: center;
             transition: all 0.3s ease;
@@ -588,7 +598,7 @@
             margin: 1em 2em;
             padding: 0 0 0.5em;
             text-align: center;
-            flex-grow: 1; 
+            flex-grow: 1;
         }
         .pricing-palden .pricing-feature-list {
             margin: 0;
@@ -598,7 +608,7 @@
             padding-left: 2em;
             padding-right: 2em;
             color: var(--text-color);
-            flex-grow: 1; 
+            flex-grow: 1;
         }
         .pricing-palden .pricing-feature {
             padding: 0.8em 0;
@@ -669,6 +679,8 @@
             }
             .pricing-palden .pricing-item {
                 max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
@@ -871,7 +883,7 @@
 <body>
 
     <header class="navbar" id="navbar">
-        <div class="container navbar-container">
+        <div class="navbar-container">
             <a href="#hero" class="nav-logo">Sulis<span>LaundrySpecialist</span></a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#about">Tentang Kami</a></li>
@@ -891,58 +903,66 @@
 
         <section id="hero" class="hero">
             <div class="container hero-content">
-                <h1>Wujudkan Bisnis Laundry Impian Anda</h1>
-                <p>Raih profit maksimal dengan bimbingan langsung dari pakar laundry berpengalaman. Kami hadirkan strategi nyata yang telah teruji, berangkat dari kesuksesan 4 cabang aktif kami. Mulai perjalanan sukses Anda sekarang!</p>
-                <a href="#pricing" class="btn">Lihat Paket Kami</a>
+                <div class="main-content">
+                    <h1>Wujudkan Bisnis Laundry Impian Anda</h1>
+                    <p>Raih profit maksimal dengan bimbingan langsung dari pakar laundry berpengalaman. Kami hadirkan strategi nyata yang telah teruji, berangkat dari kesuksesan 4 cabang aktif kami. Mulai perjalanan sukses Anda sekarang!</p>
+                    <a href="#pricing" class="btn">Lihat Paket Kami</a>
+                </div>
             </div>
         </section>
 
         <section id="about">
-            <div class="container about-grid">
-                <div class="about-content anim-element">
-                    <h3 class="section-title h2 about-title">Dari Praktisi untuk Calon <span class="highlight">Pengusaha Sukses</span></h3>
-                    <p>Berdiri sejak 2017, <b>Sulis Laundry Specialist</b> telah berkembang dari satu gerai menjadi empat cabang sukses di Sidoarjo, menunjukkan komitmen dan keahlian dalam industri laundry. Sebagai praktisi berpengalaman, kami memahami dinamika bisnis secara mendalam. Melalui mentoring, kami berbagi model bisnis yang terbukti efektif, efisien, dan menguntungkan, hasil dari pengalaman nyata dan keberhasilan kami, untuk membawa Bisnis Anda meraih kesuksesan.</p>
+            <div class="container">
+                <div class="main-content">
+                    <div class="about-grid">
+                        <div class="about-content anim-element">
+                            <h3 class="section-title h2 about-title">Dari Praktisi untuk Calon <span class="highlight">Pengusaha Sukses</span></h3>
+                            <p>Berdiri sejak 2017, <b>Sulis Laundry Specialist</b> telah berkembang dari satu gerai menjadi empat cabang sukses di Sidoarjo, menunjukkan komitmen dan keahlian dalam industri laundry. Sebagai praktisi berpengalaman, kami memahami dinamika bisnis secara mendalam. Melalui mentoring, kami berbagi model bisnis yang terbukti efektif, efisien, dan menguntungkan, hasil dari pengalaman nyata dan keberhasilan kami, untuk membawa Bisnis Anda meraih kesuksesan.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="branches" class="branches">
             <div class="container">
-                <div class="section-title anim-element">
-                    <h2>Jejak Sukses Kami<br><span class="highlight-branches-large">4 Cabang Aktif King Laundry</span></h2>
-                    <p>Ini adalah bukti nyata dari sistem yang akan Anda pelajari. Setiap cabang beroperasi dengan standar tinggi yang konsisten.</p>
-                </div>
-                <div class="branch-grid">
-                    <div class="branch-card anim-element">
-                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sepande.jpg');"></div>
-                        <div class="branch-card-content">
-                            <h3>King Laundry Sepande</h3>
-                            <p>0812-3325-5011</p>
-                            <a href="https://maps.app.goo.gl/AsfGo7TwvSG2mcqHA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
-                        </div>
+                <div class="main-content">
+                    <div class="section-title anim-element">
+                        <h2>Jejak Sukses Kami<br><span class="highlight-branches-large">4 Cabang Aktif King Laundry</span></h2>
+                        <p>Ini adalah bukti nyata dari sistem yang akan Anda pelajari. Setiap cabang beroperasi dengan standar tinggi yang konsisten.</p>
                     </div>
-                    <div class="branch-card anim-element">
-                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/IMG_20250726_230349.jpg');"></div>
-                        <div class="branch-card-content">
-                            <h3>King Laundry Sungon</h3>
-                            <p>0812-3325-5011</p>
-                            <a href="https://maps.app.goo.gl/ynWzy8Jm3et8eBQL9" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                    <div class="branch-grid">
+                        <div class="branch-card anim-element">
+                            <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sepande.jpg');"></div>
+                            <div class="branch-card-content">
+                                <h3>King Laundry Sepande</h3>
+                                <p>0812-3325-5011</p>
+                                <a href="https://maps.app.goo.gl/AsfGo7TwvSG2mcqHA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="branch-card anim-element">
-                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sukodono.jpg');"></div>
-                        <div class="branch-card-content">
-                            <h3>King Laundry Sukodono</h3>
-                            <p>0822-2557-2032</p>
-                            <a href="https://maps.app.goo.gl/4gLBTujeUKohgqqD8" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        <div class="branch-card anim-element">
+                            <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/IMG_20250726_230349.jpg');"></div>
+                            <div class="branch-card-content">
+                                <h3>King Laundry Sungon</h3>
+                                <p>0812-3325-5011</p>
+                                <a href="https://maps.app.goo.gl/ynWzy8Jm3et8eBQL9" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="branch-card anim-element">
-                        <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/thamrin.jpg');"></div>
-                        <div class="branch-card-content">
-                            <h3>King Laundry Thamrin</h3>
-                            <p>0852-1313-1586</p>
-                            <a href="https://maps.app.goo.gl/wj9VEHsGGFZRjdQEA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                        <div class="branch-card anim-element">
+                            <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/sukodono.jpg');"></div>
+                            <div class="branch-card-content">
+                                <h3>King Laundry Sukodono</h3>
+                                <p>0822-2557-2032</p>
+                                <a href="https://maps.app.goo.gl/4gLBTujeUKohgqqD8" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                            </div>
+                        </div>
+                        <div class="branch-card anim-element">
+                            <div class="branch-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/thamrin.jpg');"></div>
+                            <div class="branch-card-content">
+                                <h3>King Laundry Thamrin</h3>
+                                <p>0852-1313-1586</p>
+                                <a href="https://maps.app.goo.gl/wj9VEHsGGFZRjdQEA" target="_blank" class="btn btn-secondary">Lihat Peta</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -951,65 +971,67 @@
 
         <section id="services">
             <div class="container">
-                <div class="section-title anim-element">
-                    <h2>Standar Kualitas King Laundry</h2>
-                    <p>Visualisasi dari standar operasional dan hasil pengerjaan yang akan Anda pelajari dan terapkan dalam bisnis Anda.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb1.jpg');">Foto Layanan 1</div>
-                        <div class="service-content">
-                            <h3>PENYAMBUTAN HANGAT</h3>
-                            <p class="service-description">Karyawan kami siap menyambut Anda dengan senyum, memberikan pelayanan ramah sejak kedatangan pertama.</p>
-                        </div>
+                <div class="main-content">
+                    <div class="section-title anim-element">
+                        <h2>Standar Kualitas King Laundry</h2>
+                        <p>Visualisasi dari standar operasional dan hasil pengerjaan yang akan Anda pelajari dan terapkan dalam bisnis Anda.</p>
                     </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb2.jpg');">Foto Layanan 2</div>
-                        <div class="service-content">
-                            <h3>PROSES PENCUCIAN PROFESIONAL</h3>
-                            <p class="service-description">Pakaian Anda dipersiapkan dengan teliti sebelum masuk ke mesin cuci canggih kami, memastikan kebersihan optimal.</p>
+                    <div class="services-grid">
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb1.jpg');">Foto Layanan 1</div>
+                            <div class="service-content">
+                                <h3>PENYAMBUTAN HANGAT</h3>
+                                <p class="service-description">Karyawan kami siap menyambut Anda dengan senyum, memberikan pelayanan ramah sejak kedatangan pertama.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb3.jpg');">Foto Layanan 3</div>
-                        <div class="service-content">
-                            <h3>PAKAIAN BEBAS KUSUT</h3>
-                            <p class="service-description">Penggunaan mesin setrika uap modern menjamin setiap pakaian Anda rapi dan bebas kusut sempurna.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb2.jpg');">Foto Layanan 2</div>
+                            <div class="service-content">
+                                <h3>PROSES PENCUCIAN PROFESIONAL</h3>
+                                <p class="service-description">Pakaian Anda dipersiapkan dengan teliti sebelum masuk ke mesin cuci canggih kami, memastikan kebersihan optimal.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb4.jpg');">Foto Layanan 4</div>
-                        <div class="service-content">
-                            <h3>KEHARUMAN TAHAN LAMA</h3>
-                            <p class="service-description">Kami menyemprotkan parfum khusus laundry berkualitas tinggi agar pakaian Anda wangi sepanjang hari.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb3.jpg');">Foto Layanan 3</div>
+                            <div class="service-content">
+                                <h3>PAKAIAN BEBAS KUSUT</h3>
+                                <p class="service-description">Penggunaan mesin setrika uap modern menjamin setiap pakaian Anda rapi dan bebas kusut sempurna.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb5.jpg');">Foto Layanan 5</div>
-                        <div class="service-content">
-                            <h3>PENGEPAKAN RAPI & HIGIENIS</h3>
-                            <p class="service-description">Setiap pakaian dikemas dengan standar kebersihan tinggi, siap untuk diambil atau diantar.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb4.jpg');">Foto Layanan 4</div>
+                            <div class="service-content">
+                                <h3>KEHARUMAN TAHAN LAMA</h3>
+                                <p class="service-description">Kami menyemprotkan parfum khusus laundry berkualitas tinggi agar pakaian Anda wangi sepanjang hari.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb6.jpg');">Foto Layanan 6</div>
-                        <div class="service-content">
-                            <h3>KONTROL KUALITAS MENYELURUH</h3>
-                            <p class="service-description">Setiap hasil cucian melalui tahap pengecekan ketat untuk memastikan tidak ada detail yang terlewat.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb5.jpg');">Foto Layanan 5</div>
+                            <div class="service-content">
+                                <h3>PENGEPAKAN RAPI & HIGIENIS</h3>
+                                <p class="service-description">Setiap pakaian dikemas dengan standar kebersihan tinggi, siap untuk diambil atau diantar.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb7.jpg');">Foto Layanan 7</div>
-                        <div class="service-content">
-                            <h3>PROSES CEPAT DENGAN PELAYANAN OPTIMAL</h3>
-                            <p class="service-description">Karyawan kami memastikan Anda menerima pakaian yang sudah bersih dan rapi dengan pelayanan terbaik.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb6.jpg');">Foto Layanan 6</div>
+                            <div class="service-content">
+                                <h3>KONTROL KUALITAS MENYELURUH</h3>
+                                <p class="service-description">Setiap hasil cucian melalui tahap pengecekan ketat untuk memastikan tidak ada detail yang terlewat.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card anim-element">
-                        <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb8.jpg');">Foto Layanan 8</div>
-                        <div class="service-content">
-                            <h3>FREE DELIVERY</h3>
-                            <p class="service-description">Kami siap mengantar pakaian bersih Anda secara gratis langsung ke tempat tujuan.</p>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb7.jpg');">Foto Layanan 7</div>
+                            <div class="service-content">
+                                <h3>PROSES CEPAT DENGAN PELAYANAN OPTIMAL</h3>
+                                <p class="service-description">Karyawan kami memastikan Anda menerima pakaian yang sudah bersih dan rapi dengan pelayanan terbaik.</p>
+                            </div>
+                        </div>
+                        <div class="service-card anim-element">
+                            <div class="service-photo-placeholder" style="background-image: url('https://ik.imagekit.io/y6chns5jr/gb8.jpg');">Foto Layanan 8</div>
+                            <div class="service-content">
+                                <h3>FREE DELIVERY</h3>
+                                <p class="service-description">Kami siap mengantar pakaian bersih Anda secara gratis langsung ke tempat tujuan.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1018,35 +1040,37 @@
 
         <section id="mentoring" class="mentoring">
             <div class="container">
-                <div class="section-title anim-element">
-                    <h2>Layanan Mentoring Unggulan Kami</h2>
-                    <p>Kami tidak hanya memberikan ilmu, kami memberikan panduan praktis dan dukungan penuh untuk kesuksesan Anda.</p>
-                </div>
-                <div class="mentoring-grid">
-                    <div class="feature-card anim-element">
-                        <div class="icon"><i class="fi fi-rs-chart-histogram"></i></div>
-                        <h3>Kurikulum Berbasis Praktik</h3>
-                        <p>Semua materi berasal dari pengalaman nyata mengelola 4 cabang, bukan hanya teori dari buku. Anda belajar apa yang benar-benar berhasil di lapangan.</p>
+                <div class="main-content">
+                    <div class="section-title anim-element">
+                        <h2>Layanan Mentoring Unggulan Kami</h2>
+                        <p>Kami tidak hanya memberikan ilmu, kami memberikan panduan praktis dan dukungan penuh untuk kesuksesan Anda.</p>
                     </div>
-                    <div class="feature-card anim-element">
-                        <div class="icon"><i class="fi fi-rs-dialogue-exchange"></i></div>
-                        <h3>Pendampingan Personal & Fleksibel</h3>
-                        <p>Kami tidak hanya memberi modul. Anda mendapat pendampingan intensif via konsultasi langsung dan WhatsApp support untuk solusi masalah harian bisnis Anda.</p>
-                    </div>
-                    <div class="feature-card anim-element">
-                        <div class="icon"><i class="fi fi-rr-analyse-alt"></i></div>
-                        <h3>Blueprint Operasional Teruji</h3>
-                        <p>Dapatkan blueprint lengkap: SOP pencucian, rekrutmen karyawan, perhitungan HPP, hingga manajemen keuangan yang sudah terbukti profitabel.</p>
-                    </div>
-                    <div class="feature-card anim-element">
-                        <div class="icon"><i class="fi fi-rs-sparkles"></i></div>
-                        <h3>Strategi Marketing Efektif</h3>
-                        <p>Pelajari cara menarik pelanggan pertama Anda dan membangun loyalitas. Dari strategi online (sosmed) hingga offline (promo lokal) yang terbukti ampuh.</p>
-                    </div>
-                     <div class="feature-card anim-element">
-                        <div class="icon"><i class="fi fi-ss-entrance"></i></div>
-                        <h3>Akses Jaringan Supplier</h3>
-                        <p>Dapatkan rekomendasi supplier bahan baku dan peralatan laundry terbaik dengan harga kompetitif. Hemat waktu dan biaya riset Anda.</p>
+                    <div class="mentoring-grid">
+                        <div class="feature-card anim-element">
+                            <div class="icon"><i class="fi fi-rs-chart-histogram"></i></div>
+                            <h3>Kurikulum Berbasis Praktik</h3>
+                            <p>Semua materi berasal dari pengalaman nyata mengelola 4 cabang, bukan hanya teori dari buku. Anda belajar apa yang benar-benar berhasil di lapangan.</p>
+                        </div>
+                        <div class="feature-card anim-element">
+                            <div class="icon"><i class="fi fi-rs-dialogue-exchange"></i></div>
+                            <h3>Pendampingan Personal & Fleksibel</h3>
+                            <p>Kami tidak hanya memberi modul. Anda mendapat pendampingan intensif via konsultasi langsung dan WhatsApp support untuk solusi masalah harian bisnis Anda.</p>
+                        </div>
+                        <div class="feature-card anim-element">
+                            <div class="icon"><i class="fi fi-rr-analyse-alt"></i></div>
+                            <h3>Blueprint Operasional Teruji</h3>
+                            <p>Dapatkan blueprint lengkap: SOP pencucian, rekrutmen karyawan, perhitungan HPP, hingga manajemen keuangan yang sudah terbukti profitabel.</p>
+                        </div>
+                        <div class="feature-card anim-element">
+                            <div class="icon"><i class="fi fi-rs-sparkles"></i></div>
+                            <h3>Strategi Marketing Efektif</h3>
+                            <p>Pelajari cara menarik pelanggan pertama Anda dan membangun loyalitas. Dari strategi online (sosmed) hingga offline (promo lokal) yang terbukti ampuh.</p>
+                        </div>
+                        <div class="feature-card anim-element">
+                            <div class="icon"><i class="fi fi-ss-entrance"></i></div>
+                            <h3>Akses Jaringan Supplier</h3>
+                            <p>Dapatkan rekomendasi supplier bahan baku dan peralatan laundry terbaik dengan harga kompetitif. Hemat waktu dan biaya riset Anda.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1054,158 +1078,162 @@
 
         <section id="pricing">
             <div class="container">
-                <div class="section-title anim-element">
-                    <h2>Paket Mentoring Bisnis Laundry</h2>
-                    <p>Pilih paket yang paling sesuai dengan kebutuhan Anda untuk memulai atau mengakselerasi bisnis laundry.</p>
-                </div>
-                
-                <div class='pricing pricing-palden'>
-                    <div class='pricing-item anim-element'>
-                        <div class='pricing-deco'>
-                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	H42.401L43.415,98.342z' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
-                            </svg>
-                            <div class='pricing-price'>
-                                <span class='pricing-currency'>Rp</span>200rb
-                                <span class='pricing-period'>/jam</span>
-                            </div>
-                            <h3 class='pricing-title'>KONSULTASI CEPAT</h3>
-                        </div>
-                        
-                        <p class='pricing__sentence'>Untuk Anda yang masih ragu & butuh arahan awal</p>
-                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
-                        
-                        <ul class='pricing-feature-list'>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Online 1 Jam via Zoom/WA</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Analisis Peluang Usaha Laundry</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Estimasi Modal & Biaya Operasional</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Tanya-Jawab Intensif</li>
-                        </ul>
+                <div class="main-content">
+                    <div class="section-title anim-element">
+                        <h2>Paket Mentoring Bisnis Laundry</h2>
+                        <p>Pilih paket yang paling sesuai dengan kebutuhan Anda untuk memulai atau mengakselerasi bisnis laundry.</p>
                     </div>
-
-                    <div class='pricing-item pricing__item--featured anim-element'>
-                        <div class='pricing-deco'>
-                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	H42.401L43.415,98.342z' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
-                            </svg>
-                            <div class='pricing-price'>
-                                <span class='pricing-currency'>Rp</span>1,5jt
-                                <span class='pricing-period'>/bulan</span>
+                    
+                    <div class='pricing pricing-palden'>
+                        <div class='pricing-item anim-element'>
+                            <div class='pricing-deco'>
+                                <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+        c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+        c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+        H42.401L43.415,98.342z' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+        c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                                </svg>
+                                <div class='pricing-price'>
+                                    <span class='pricing-currency'>Rp</span>200rb
+                                    <span class='pricing-period'>/jam</span>
+                                </div>
+                                <h3 class='pricing-title'>KONSULTASI CEPAT</h3>
                             </div>
-                            <h3 class='pricing-title'>PAKET PEMULA</h3>
+                            
+                            <p class='pricing__sentence'>Untuk Anda yang masih ragu & butuh arahan awal</p>
+                            
+                            <ul class='pricing-feature-list'>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Online 1 Jam via Zoom/WA</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Analisis Peluang Usaha Laundry</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Estimasi Modal & Biaya Operasional</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Tanya-Jawab Intensif</li>
+                            </ul>
+                            <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
                         </div>
-                        
-                        <p class='pricing__sentence'>Untuk Anda yang ingin mulai dari nol dengan panduan lengkap</p>
-                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
-                        
-                        <ul class='pricing-feature-list'>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan Lengkap (Modal, SOP, HPP)</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Strategi Pemasaran Awal</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>4x Sesi Konsultasi Mingguan via Zoom/WA</li>
-                             <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Full WhatsApp Support 1 Bulan</li>
-                        </ul>
-                    </div>
 
-                    <div class='pricing-item anim-element'>
-                        <div class='pricing-deco'>
-                            <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
-	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
-	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
-                                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
-	H42.401L43.415,98.342z' opacity='0.7'></path>
-                                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
-	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
-                            </svg>
-                            <div class='pricing-price'>
-                                <span class='pricing-currency'>Rp</span>1jt
-                                <span class='pricing-period'>/bulan</span>
+                        <div class='pricing-item pricing__item--featured anim-element'>
+                            <div class='pricing-deco'>
+                                <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+        c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+        c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+        H42.401L43.415,98.342z' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+        c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                                </svg>
+                                <div class='pricing-price'>
+                                    <span class='pricing-currency'>Rp</span>1,5jt
+                                    <span class='pricing-period'>/bulan</span>
+                                </div>
+                                <h3 class='pricing-title'>PAKET PEMULA</h3>
                             </div>
-                            <h3 class='pricing-title'>WA SUPPORT</h3>
+                            
+                            <p class='pricing__sentence'>Untuk Anda yang ingin mulai dari nol dengan panduan lengkap</p>
+                            
+                            <ul class='pricing-feature-list'>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan Lengkap (Modal, SOP, HPP)</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Strategi Pemasaran Awal</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>4x Sesi Konsultasi Mingguan via Zoom/WA</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Full WhatsApp Support 1 Bulan</li>
+                            </ul>
+                            <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
                         </div>
-                        
-                        <p class='pricing__sentence'>Partner diskusi harian untuk scale up bisnis Anda</p>
-                        <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
-                        
-                        <ul class='pricing-feature-list'>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Konsultasi Langsung via WhatsApp</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Tanya Jawab Seputar Operasional, Marketing & Manajemen Laundry</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Review Strategi Promosi</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan SOP & Rekrutmen</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
-                             <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Akses Prioritas (Fast Response)</li>
-                            <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Konsultasi: Senin-Sabtu, 08:00-20:00 WIB</li>
-                        </ul>
+
+                        <div class='pricing-item anim-element'>
+                            <div class='pricing-deco'>
+                                <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+        c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+        c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+        H42.401L43.415,98.342z' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+        c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'></path>
+                                </svg>
+                                <div class='pricing-price'>
+                                    <span class='pricing-currency'>Rp</span>1jt
+                                    <span class='pricing-period'>/bulan</span>
+                                </div>
+                                <h3 class='pricing-title'>WA SUPPORT</h3>
+                            </div>
+                            
+                            <p class='pricing__sentence'>Partner diskusi harian untuk scale up bisnis Anda</p>
+                            
+                            <ul class='pricing-feature-list'>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Konsultasi Langsung via WhatsApp</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Tanya Jawab Seputar Operasional, Marketing & Manajemen Laundry</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Review Strategi Promosi</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Panduan SOP & Rekrutmen</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Rekomendasi Peralatan & Supplier</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Akses Prioritas (Fast Response)</li>
+                                <li class='pricing-feature'><i class="fi fi-ss-hand-back-point-right"></i>Sesi Konsultasi: Senin-Sabtu, 08:00-20:00 WIB</li>
+                            </ul>
+                            <button class='pricing-action' onclick="location.href='https://wa.me/62881027306371'">Pilih Paket</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
         <section id="contact" class="contact">
-            <div class="container anim-element">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Siap Wujudkan Bisnis Laundry Impian Anda?</h3>
-                        <p>Jangan tunda lagi! Konsultasikan rencana Anda sekarang. Hubungi kami melalui channel di bawah atau kirim pesan Anda.</p>
-                        <div class="contact-info-item">
-                            <div class="icon">
-                               <i class="fi fi-brands-whatsapp"></i>
+            <div class="container">
+                <div class="main-content anim-element">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>Siap Wujudkan Bisnis Laundry Impian Anda?</h3>
+                            <p>Jangan tunda lagi! Konsultasikan rencana Anda sekarang. Hubungi kami melalui channel di bawah atau kirim pesan Anda.</p>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                   <i class="fi fi-brands-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <strong>WhatsApp:</strong><br>
+                                    <a href="https://wa.me/62881027306371" target="_blank">+62 881-0273-06371</a>
+                                </div>
                             </div>
-                            <div>
-                                <strong>WhatsApp:</strong><br>
-                                <a href="https://wa.me/62881027306371" target="_blank">+62 881-0273-06371</a>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                   <i class="fi fi-brands-tik-tok"></i>
+                                </div>
+                                <div>
+                                    <strong>TikTok:</strong><br>
+                                    <a href="https://tiktok.com/@sulis_laundry_specialist" target="_blank">@sulis_laundry_specialist</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                   <i class="fi fi-rs-envelope"></i>
+                                </div>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:sulis.laundrysp@gmail.com">sulis.laundrysp@gmail.com</a>
+                                </div>
                             </div>
                         </div>
-                         <div class="contact-info-item">
-                            <div class="icon">
-                               <i class="fi fi-brands-tik-tok"></i>
+                        <form class="contact-form" id="contactForm" action="https://getform.io/f/allzmoka" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Nama Lengkap Anda" required>
                             </div>
-                            <div>
-                                <strong>TikTok:</strong><br>
-                                <a href="https://tiktok.com/@sulis_laundry_specialist" target="_blank">@sulis_laundry_specialist</a>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Alamat Email" required>
                             </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon">
-                               <i class="fi fi-rs-envelope"></i>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subjek / Paket yang Dipilih" required>
                             </div>
-                            <div>
-                                <strong>Email:</strong><br>
-                                <a href="mailto:sulis.laundrysp@gmail.com">sulis.laundrysp@gmail.com</a>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
                             </div>
-                        </div>
+                            <button type="submit" class="btn">Kirim Pesan</button>
+                        </form>
                     </div>
-                    <form class="contact-form" id="contactForm" action="https://getform.io/f/allzmoka" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Nama Lengkap Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Alamat Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subjek / Paket yang Dipilih" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Kirim Pesan</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -1214,31 +1242,33 @@
     
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>Sulis <span>Laundry Specialist</span></h3>
-                    <p>Mentoring bisnis laundry berbasis pengalaman nyata. Kami membantu Anda membangun bisnis yang profitabel dan berkelanjutan dari nol.</p>
-                </div>
-                <div class="footer-widget">
-                    <h4>Navigasi</h4>
-                    <ul>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#mentoring">Layanan</a></li>
-                        <li><a href="#pricing">Paket</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-widget">
-                    <h4>Terhubung</h4>
-                    <div class="footer-socials">
-                        <a href="https://wa.me/62881027306371" target="_blank" title="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
-                        <a href="https://tiktok.com/@sulis_laundry_specialist" target="_blank" title="TikTok"><i class="fi fi-brands-tik-tok"></i></a>
-                        <a href="mailto:sulis.laundrysp@gmail.com" title="Email"><i class="fi fi-rs-envelope"></i></a>
+            <div class="main-content">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <h3>Sulis <span>Laundry Specialist</span></h3>
+                        <p>Mentoring bisnis laundry berbasis pengalaman nyata. Kami membantu Anda membangun bisnis yang profitabel dan berkelanjutan dari nol.</p>
+                    </div>
+                    <div class="footer-widget">
+                        <h4>Navigasi</h4>
+                        <ul>
+                            <li><a href="#about">Tentang Kami</a></li>
+                            <li><a href="#mentoring">Layanan</a></li>
+                            <li><a href="#pricing">Paket</a></li>
+                            <li><a href="#contact">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h4>Terhubung</h4>
+                        <div class="footer-socials">
+                            <a href="https://wa.me/62881027306371" target="_blank" title="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                            <a href="https://tiktok.com/@sulis_laundry_specialist" target="_blank" title="TikTok"><i class="fi fi-brands-tik-tok"></i></a>
+                            <a href="mailto:sulis.laundrysp@gmail.com" title="Email"><i class="fi fi-rs-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Sulis Laundry Specialist. All Rights Reserved.</p>
+                <div class="footer-bottom">
+                    <p>© 2025 Sulis Laundry Specialist. All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -1271,7 +1301,6 @@
         });
         
         const navbar = document.getElementById('navbar');
-
         const sections = document.querySelectorAll('section[id]');
         const navLinksDesktop = document.querySelectorAll('.nav-menu a');
 
@@ -1307,72 +1336,65 @@
             });
         });
 
-        // --- Perbaikan Formulir Kontak Dimulai Di Sini ---
         const contactForm = document.getElementById('contactForm');
-        const submitButton = contactForm.querySelector('button[type="submit"]'); // Dapatkan tombol submit
+        const submitButton = contactForm.querySelector('button[type="submit"]');
 
         if (contactForm) {
-            contactForm.addEventListener('submit', async function(event) { // Tambahkan 'async'
-                event.preventDefault(); // Mencegah pengiriman formulir default
+            contactForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
 
                 let isValid = true;
-                const formInputs = contactForm.querySelectorAll('input[required], textarea[required]');
+                const nameInput = contactForm.querySelector('input[name="name"]');
+                const emailInput = contactForm.querySelector('input[name="email"]');
+                const subjectInput = contactForm.querySelector('input[name="subject"]');
+                const messageInput = contactForm.querySelector('textarea[name="message"]');
 
-                // Validasi input
-                formInputs.forEach(input => {
-                    if (!input.value.trim()) {
+                const inputs = [nameInput, emailInput, subjectInput, messageInput];
+
+                inputs.forEach(input => {
+                    if (input && !input.value.trim()) {
                         isValid = false;
                         input.style.borderColor = 'red';
-                        input.placeholder = 'Mohon isi bidang ini!';
-                    } else {
-                        input.style.borderColor = ''; // Hapus border merah jika sudah diisi
-                        // Mengembalikan placeholder asli
-                        if (input.name === 'name') input.placeholder = 'Nama Lengkap Anda';
-                        if (input.name === 'email') input.placeholder = 'Alamat Email';
-                        if (input.name === 'subject') input.placeholder = 'Subjek / Paket yang Dipilih';
-                        if (input.name === 'message') input.placeholder = 'Tulis pesan Anda di sini...';
+                    } else if (input) {
+                        input.style.borderColor = '';
                     }
                 });
 
                 if (!isValid) {
-                    alert('Mohon lengkapi semua bidang yang wajib diisi.');
-                    return; // Hentikan proses jika validasi gagal
+                    alert('Mohon lengkapi semua bidang yang wajib diisi!');
+                    return;
                 }
 
-                // Jika validasi berhasil, kirim data
-                submitButton.disabled = true; // Nonaktifkan tombol untuk mencegah double submit
-                submitButton.textContent = 'Mengirim...'; // Ubah teks tombol
+                submitButton.disabled = true;
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Mengirim...';
 
-                const formData = new FormData(contactForm); // Mengambil semua data dari formulir
+                const formData = new FormData(contactForm);
 
                 try {
                     const response = await fetch(contactForm.action, {
                         method: contactForm.method,
                         body: formData,
                         headers: {
-                            'Accept': 'application/json' // Penting untuk Getform.io
+                            'Accept': 'application/json'
                         }
                     });
 
                     if (response.ok) {
                         alert('Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.');
-                        contactForm.reset(); // Mengosongkan formulir
+                        contactForm.reset();
                     } else {
-                        // Coba ambil pesan error dari response jika ada
-                        const errorData = await response.json(); 
-                        alert(`Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung. Error: ${errorData.message || response.statusText}`);
+                        alert('Gagal mengirim pesan. Silakan coba lagi atau hubungi kami langsung.');
                     }
                 } catch (error) {
                     console.error('Error saat mengirim formulir:', error);
                     alert('Terjadi kesalahan jaringan atau server. Silakan coba lagi nanti.');
                 } finally {
-                    submitButton.disabled = false; // Aktifkan kembali tombol
-                    submitButton.textContent = 'Kirim Pesan'; // Kembalikan teks tombol
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
                 }
             });
         }
-        // --- Perbaikan Formulir Kontak Selesai Di Sini ---
-
     });
     </script>
 </body>
