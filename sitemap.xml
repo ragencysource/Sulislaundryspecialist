@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://sulislaundryspecialist.id/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <image:image>
+      <image:loc>https://ik.imagekit.io/y6chns5jr/herosulisl.jpg</image:loc>
+      <image:title>Training Laundry Profesional Sulis Laundry Specialist</image:title>
+      <image:caption>Pelatihan bisnis laundry dan paket usaha laundry terpercaya</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://ik.imagekit.io/y6chns5jr/absulis.png</image:loc>
+      <image:title>Bunda Sulis Mentor Laundry</image:title>
+    </image:image>
+  </url>
+
+</urlset>
