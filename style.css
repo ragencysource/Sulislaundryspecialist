@@ -158,7 +158,7 @@ img { display: block; max-width: 100%; height: auto; }
 .navbar {
     position: fixed;
     top: 0;
-    right: 0; /* Ubah dari -300px ke 0 */
+    right: 0; 
     width: 100%;
     max-width: 300px;
     height: 100vh;
@@ -168,7 +168,7 @@ img { display: block; max-width: 100%; height: auto; }
     transition: var(--transition);
     box-shadow: -5px 0 20px rgba(0,0,0,0.1);
     
-    /* Logika Sembunyi Baru agar tidak bikin space kosong */
+    
     transform: translateX(100%); 
     visibility: hidden; 
 }
@@ -204,6 +204,9 @@ img { display: block; max-width: 100%; height: auto; }
         display: flex;
         gap: 40px;
         align-items: center;
+        transform: none; 
+        visibility: visible;
+        width: auto;
     }
     .navbar-list {
         display: flex;
@@ -622,55 +625,86 @@ img { display: block; max-width: 100%; height: auto; }
     }
 }
 
+/* =========================================
+   REVISI HERO MOBILE (URUTAN, FONT & JARAK)
+   ========================================= */
 @media (max-width: 991px) {
+    
+    /* Kurangi padding atas agar tidak terlalu turun */
+    .hero {
+        padding-top: 100px; 
+        padding-bottom: 60px;
+    }
+
     .hero .container {
         display: flex;
         flex-direction: column;
         text-align: left;
+        gap: 0; /* Reset gap container */
     }
 
     .hero-content {
         display: contents;
     }
 
+    /* 1. Badge (Paling Atas) */
     .hero-logo-badge {
         order: 1;
         width: fit-content;
-        margin-bottom: 20px;
-        margin-top: 0;
+        margin-bottom: 20px; /* Jarak ke foto */
+        padding: 6px 14px; /* Sedikit diperkecil */
     }
+    .hero-logo-badge img { width: 24px; }
+    .hero-logo-badge span { font-size: 0.8rem; }
 
+    /* 2. Foto (Tengah) */
     .hero-banner {
         order: 2;
-        margin-bottom: 30px;
+        margin-bottom: 25px; /* Jarak ke Judul */
         width: 100%;
+        margin-inline: 0;
+    }
+    .hero-banner img {
+        box-shadow: 10px 10px 0px rgba(252, 163, 17, 0.2); /* Shadow diperkecil biar rapi */
     }
 
+    /* 3. Judul (Teks Tebal & Pas) */
     .hero-title {
         order: 3;
-        margin-bottom: 15px;
+        margin-bottom: 12px; /* Jarak ke deskripsi diperpendek */
+        font-size: 2rem; /* Ukuran font judul di HP (32px) */
+        line-height: 1.2;
     }
 
+    /* 4. Deskripsi (Teks Abu Gelap & Rapat) */
     .hero .section-text {
         order: 4;
+        margin-bottom: 25px; /* Jarak ke tombol */
+        font-size: 1rem; /* Ukuran standar baca */
+        line-height: 1.6;
+        color: var(--neutral-900) !important; /* Warna gelap sesuai request */
     }
 
+    /* 5. Tombol */
     .hero-btn-group {
         order: 5;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+    .hero-btn-group .btn {
+        width: 100%; /* Tombol full width di HP biar gampang dipencet */
+        padding: 12px;
     }
 
+    /* 6. Statistik */
     .hero-stats {
         order: 6;
+        padding-top: 25px;
+        gap: 20px;
+        justify-content: space-between; /* Sebar merata */
     }
-    
-    .hero-content .hero-logo-badge, 
-    .hero-content .hero-title, 
-    .hero-content .section-text,
-    .hero-content .hero-btn-group,
-    .hero-content .hero-stats {
-        position: relative;
-        z-index: 2;
-    }
+    .stat-num { font-size: 1.5rem; }
+    .stat-desc { font-size: 0.75rem; }
 }
 .section-text {
     color: var(--neutral-700) !important; 
@@ -706,3 +740,4 @@ img { display: block; max-width: 100%; height: auto; }
 .about-card p {
     color: var(--neutral-700) !important;
 }
+
