@@ -740,4 +740,20 @@ img { display: block; max-width: 100%; height: auto; }
 .about-card p {
     color: var(--neutral-700) !important;
 }
+/* --- PERBAIKAN WARNA TEKS FITUR (BACKGROUND GELAP) --- */
+.features .section-title,
+.features-item .item-title {
+    color: #FFFFFF !important;
+}
+
+.features .section-text,
+.features-item .item-text {
+    color: var(--neutral-300) !important; /* Warna abu terang */
+    opacity: 1;
+}
+
+.features .feature-icon-box {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
 
